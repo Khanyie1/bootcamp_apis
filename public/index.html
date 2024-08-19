@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootcamp APIs</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
+  <script src="./index.js"></script>
+</head>
+<body>
+  <div x-data="data">
+    <h2>Word Game Widget</h2>
+    <input type="text" x-model="sentence" placeholder="Enter a sentence">
+    <button @click="analyzeSentence">Analyze</button>
+    <div x-show="sentenceResult">
+      <p>Longest Word Length: <span x-text="sentenceResult.longestWord"></span></p>
+      <p>Shortest Word: <span x-text="sentenceResult.shortestWord"></span></p>
+      <p>Sum of Word Lengths: <span x-text="sentenceResult.sum"></span></p>
+    </div>
+
+    <h2>Total Phone Bill Widget</h2>
+    <input type="text" x-model="bill" placeholder="Enter call and sms">
+    <button @click="calculateTotal">Calculate Total</button>
+    <div x-show="result">
+      <p>Total: <span x-text="result.total"></span></p>
+    </div>
+
+    <h3>Update Prices</h3>
+    <input type="number" x-model="callPrice" placeholder="Call Price">
+    <input type="number" x-model="smsPrice" placeholder="SMS Price">
+    <button @click="updatePrices">Update Prices</button>
+    <div x-show="updateResult">
+      <p><span x-text="updateResult.message"></span></p>
+    </div>
+
+    <h2>Enough Airtime Widget</h2>
+    <input type="text" x-model="usage" placeholder="Enter usage">
+    <input type="number" x-model="available" placeholder="Enter available airtime">
+    <button @click="checkAirtime">Check Airtime</button>
+    <div x-show="result2">
+      <p>Remaining Airtime: <span x-text="result2.result"></span></p>
+    </div>
+  </div>
+</body>
+</html>
